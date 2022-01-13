@@ -2,24 +2,24 @@
     ===== Código de TypeScript =====
 */
 
-let habilidades: (string|boolean|number)[]= ['Bash','Counter','Healing',100];
 
-habilidades.push(true);
-
-interface Personaje {
+interface Pasajero {
     nombre: string;
-    hp: number;
-    habilidades: string[];
-    puebloNatal?: string
-};
-
-const personaje: Personaje = {
-    nombre: 'Strider',
-    hp: 100,
-    habilidades: ['Bash','Counter','Healing']
+    hijos?: string[]
 }
 
+const pasajero1: Pasajero = {
+    nombre: 'Fernando'
+}
 
-personaje.puebloNatal = 'Pueblo Paleta';
+const pasajero2: Pasajero = {
+    nombre: 'Melissa',
+    hijos: ['Natalia', 'Gabriel']
+}
 
-console.table(personaje);
+function imprimeHijos (pasajero: Pasajero): void {
+    const cuantosHijos = pasajero.hijos?.length || 0;
+    console.log (cuantosHijos);
+}
+
+imprimeHijos( pasajero1);
